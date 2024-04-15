@@ -32,6 +32,9 @@ namespace SGC_garages
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.реестрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.новыйПлатёжToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.новыйГаражToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.реестрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ПоискГаражаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.владельцыГаражейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +52,7 @@ namespace SGC_garages
             this.отчт2хЭтажныеГаражиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётЭлектричествоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчётАрендаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.отчётШлагбаумToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчётБлагоустрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сервисыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.историяДействийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отправитьПисьмоВТехподдержкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,9 +63,7 @@ namespace SGC_garages
             this.NewGarageBtn = new System.Windows.Forms.Button();
             this.ReeBtn = new System.Windows.Forms.Button();
             this.FindGarageBtn = new System.Windows.Forms.Button();
-            this.реестрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.новыйПлатёжToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.новыйГаражToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчётПГСКБарсовоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,11 +95,35 @@ namespace SGC_garages
             this.реестрToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.реестрToolStripMenuItem.Text = "Главное";
             // 
+            // новыйПлатёжToolStripMenuItem
+            // 
+            this.новыйПлатёжToolStripMenuItem.Image = global::SGC_garages.Properties.Resources.money_dollar;
+            this.новыйПлатёжToolStripMenuItem.Name = "новыйПлатёжToolStripMenuItem";
+            this.новыйПлатёжToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.новыйПлатёжToolStripMenuItem.Text = "Новый платёж";
+            this.новыйПлатёжToolStripMenuItem.Click += new System.EventHandler(this.новыйПлатёжToolStripMenuItem_Click);
+            // 
+            // новыйГаражToolStripMenuItem
+            // 
+            this.новыйГаражToolStripMenuItem.Image = global::SGC_garages.Properties.Resources.garage_48;
+            this.новыйГаражToolStripMenuItem.Name = "новыйГаражToolStripMenuItem";
+            this.новыйГаражToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.новыйГаражToolStripMenuItem.Text = "Новый гараж";
+            this.новыйГаражToolStripMenuItem.Click += new System.EventHandler(this.новыйГаражToolStripMenuItem_Click);
+            // 
+            // реестрыToolStripMenuItem
+            // 
+            this.реестрыToolStripMenuItem.Image = global::SGC_garages.Properties.Resources.spreadsheet_48;
+            this.реестрыToolStripMenuItem.Name = "реестрыToolStripMenuItem";
+            this.реестрыToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.реестрыToolStripMenuItem.Text = "Реестры";
+            this.реестрыToolStripMenuItem.Click += new System.EventHandler(this.реестрыToolStripMenuItem_Click);
+            // 
             // ПоискГаражаToolStripMenuItem
             // 
             this.ПоискГаражаToolStripMenuItem.Image = global::SGC_garages.Properties.Resources.find;
             this.ПоискГаражаToolStripMenuItem.Name = "ПоискГаражаToolStripMenuItem";
-            this.ПоискГаражаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ПоискГаражаToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.ПоискГаражаToolStripMenuItem.Text = "Поиск гаража";
             this.ПоискГаражаToolStripMenuItem.Click += new System.EventHandler(this.ПоискГаражаToolStripMenuItem_Click);
             // 
@@ -189,9 +214,10 @@ namespace SGC_garages
             this.отчётНеСамостройToolStripMenuItem,
             this.отчётЖелезныеГаражиToolStripMenuItem,
             this.отчт2хЭтажныеГаражиToolStripMenuItem,
+            this.отчётПГСКБарсовоToolStripMenuItem,
             this.отчётЭлектричествоToolStripMenuItem,
             this.отчётАрендаToolStripMenuItem,
-            this.отчётШлагбаумToolStripMenuItem});
+            this.отчётБлагоустрToolStripMenuItem});
             this.отчётностьToolStripMenuItem.Image = global::SGC_garages.Properties.Resources.reportexcel;
             this.отчётностьToolStripMenuItem.Name = "отчётностьToolStripMenuItem";
             this.отчётностьToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
@@ -245,13 +271,13 @@ namespace SGC_garages
             this.отчётАрендаToolStripMenuItem.Text = "Отчёт \"Аренда\"";
             this.отчётАрендаToolStripMenuItem.Click += new System.EventHandler(this.отчётАрендаToolStripMenuItem_Click);
             // 
-            // отчётШлагбаумToolStripMenuItem
+            // отчётБлагоустрToolStripMenuItem
             // 
-            this.отчётШлагбаумToolStripMenuItem.Image = global::SGC_garages.Properties.Resources.reportexcel;
-            this.отчётШлагбаумToolStripMenuItem.Name = "отчётШлагбаумToolStripMenuItem";
-            this.отчётШлагбаумToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
-            this.отчётШлагбаумToolStripMenuItem.Text = "Отчёт \"Благоустройство\"";
-            this.отчётШлагбаумToolStripMenuItem.Click += new System.EventHandler(this.отчётШлагбаумToolStripMenuItem_Click);
+            this.отчётБлагоустрToolStripMenuItem.Image = global::SGC_garages.Properties.Resources.reportexcel;
+            this.отчётБлагоустрToolStripMenuItem.Name = "отчётБлагоустрToolStripMenuItem";
+            this.отчётБлагоустрToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.отчётБлагоустрToolStripMenuItem.Text = "Отчёт \"Благоустройство\"";
+            this.отчётБлагоустрToolStripMenuItem.Click += new System.EventHandler(this.отчётБлагоустрToolStripMenuItem_Click);
             // 
             // сервисыToolStripMenuItem
             // 
@@ -360,29 +386,13 @@ namespace SGC_garages
             this.FindGarageBtn.UseVisualStyleBackColor = true;
             this.FindGarageBtn.Click += new System.EventHandler(this.ПоискГаражаToolStripMenuItem_Click);
             // 
-            // реестрыToolStripMenuItem
+            // отчётПГСКБарсовоToolStripMenuItem
             // 
-            this.реестрыToolStripMenuItem.Image = global::SGC_garages.Properties.Resources.spreadsheet_48;
-            this.реестрыToolStripMenuItem.Name = "реестрыToolStripMenuItem";
-            this.реестрыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.реестрыToolStripMenuItem.Text = "Реестры";
-            this.реестрыToolStripMenuItem.Click += new System.EventHandler(this.реестрыToolStripMenuItem_Click);
-            // 
-            // новыйПлатёжToolStripMenuItem
-            // 
-            this.новыйПлатёжToolStripMenuItem.Image = global::SGC_garages.Properties.Resources.money_dollar;
-            this.новыйПлатёжToolStripMenuItem.Name = "новыйПлатёжToolStripMenuItem";
-            this.новыйПлатёжToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.новыйПлатёжToolStripMenuItem.Text = "Новый платёж";
-            this.новыйПлатёжToolStripMenuItem.Click += new System.EventHandler(this.новыйПлатёжToolStripMenuItem_Click);
-            // 
-            // новыйГаражToolStripMenuItem
-            // 
-            this.новыйГаражToolStripMenuItem.Image = global::SGC_garages.Properties.Resources.garage_48;
-            this.новыйГаражToolStripMenuItem.Name = "новыйГаражToolStripMenuItem";
-            this.новыйГаражToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.новыйГаражToolStripMenuItem.Text = "Новый гараж";
-            this.новыйГаражToolStripMenuItem.Click += new System.EventHandler(this.новыйГаражToolStripMenuItem_Click);
+            this.отчётПГСКБарсовоToolStripMenuItem.Image = global::SGC_garages.Properties.Resources.reportexcel;
+            this.отчётПГСКБарсовоToolStripMenuItem.Name = "отчётПГСКБарсовоToolStripMenuItem";
+            this.отчётПГСКБарсовоToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.отчётПГСКБарсовоToolStripMenuItem.Text = "Отчёт \"ПГСК Барсово\"";
+            this.отчётПГСКБарсовоToolStripMenuItem.Click += new System.EventHandler(this.отчётПГСКБарсовоToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -435,7 +445,7 @@ namespace SGC_garages
         private System.Windows.Forms.ToolStripMenuItem отчт2хЭтажныеГаражиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчётЭлектричествоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчётАрендаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem отчётШлагбаумToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отчётБлагоустрToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ПоискГаражаToolStripMenuItem;
         private System.Windows.Forms.Button NewPaymentBtn;
         private System.Windows.Forms.Button NewGarageBtn;
@@ -444,6 +454,7 @@ namespace SGC_garages
         private System.Windows.Forms.ToolStripMenuItem новыйПлатёжToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem новыйГаражToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem реестрыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отчётПГСКБарсовоToolStripMenuItem;
     }
 }
 

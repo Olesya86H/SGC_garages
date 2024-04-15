@@ -32,13 +32,13 @@ namespace SGC_garages
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportForm));
             this.label1 = new System.Windows.Forms.Label();
             this.ReportNametxtbx = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.DateBegMtxtbx = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.DateEndMtxtbx = new System.Windows.Forms.MaskedTextBox();
             this.StartBtn = new System.Windows.Forms.Button();
-            this.ClearBtn = new System.Windows.Forms.Button();
             this.CloseBtn = new System.Windows.Forms.Button();
+            this.ClearBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DateEndMtxtbx = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.DateBegMtxtbx = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -58,42 +58,6 @@ namespace SGC_garages
             this.ReportNametxtbx.Size = new System.Drawing.Size(346, 20);
             this.ReportNametxtbx.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Период:";
-            // 
-            // DateBegMtxtbx
-            // 
-            this.DateBegMtxtbx.Location = new System.Drawing.Point(149, 50);
-            this.DateBegMtxtbx.Mask = "00.00.0000";
-            this.DateBegMtxtbx.Name = "DateBegMtxtbx";
-            this.DateBegMtxtbx.Size = new System.Drawing.Size(100, 20);
-            this.DateBegMtxtbx.TabIndex = 3;
-            this.DateBegMtxtbx.ValidatingType = typeof(System.DateTime);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(259, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(10, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "-";
-            // 
-            // DateEndMtxtbx
-            // 
-            this.DateEndMtxtbx.Location = new System.Drawing.Point(275, 50);
-            this.DateEndMtxtbx.Mask = "00.00.0000";
-            this.DateEndMtxtbx.Name = "DateEndMtxtbx";
-            this.DateEndMtxtbx.Size = new System.Drawing.Size(100, 20);
-            this.DateEndMtxtbx.TabIndex = 5;
-            this.DateEndMtxtbx.ValidatingType = typeof(System.DateTime);
-            // 
             // StartBtn
             // 
             this.StartBtn.Image = global::SGC_garages.Properties.Resources.reportexcel;
@@ -105,6 +69,18 @@ namespace SGC_garages
             this.StartBtn.Text = "Сформировать";
             this.StartBtn.UseVisualStyleBackColor = true;
             this.StartBtn.Click += new System.EventHandler(this.StartBtn_Click);
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Image = global::SGC_garages.Properties.Resources.delete;
+            this.CloseBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CloseBtn.Location = new System.Drawing.Point(374, 116);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(135, 33);
+            this.CloseBtn.TabIndex = 8;
+            this.CloseBtn.Text = "Закрыть";
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
             // ClearBtn
             // 
@@ -118,17 +94,41 @@ namespace SGC_garages
             this.ClearBtn.UseVisualStyleBackColor = true;
             this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
-            // CloseBtn
+            // label2
             // 
-            this.CloseBtn.Image = global::SGC_garages.Properties.Resources.delete;
-            this.CloseBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CloseBtn.Location = new System.Drawing.Point(374, 116);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(135, 33);
-            this.CloseBtn.TabIndex = 8;
-            this.CloseBtn.Text = "Закрыть";
-            this.CloseBtn.UseVisualStyleBackColor = true;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(99, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Период:";
+            // 
+            // DateEndMtxtbx
+            // 
+            this.DateEndMtxtbx.Location = new System.Drawing.Point(275, 50);
+            this.DateEndMtxtbx.Mask = "00.00.0000";
+            this.DateEndMtxtbx.Name = "DateEndMtxtbx";
+            this.DateEndMtxtbx.Size = new System.Drawing.Size(100, 20);
+            this.DateEndMtxtbx.TabIndex = 5;
+            this.DateEndMtxtbx.ValidatingType = typeof(System.DateTime);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(259, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(10, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "-";
+            // 
+            // DateBegMtxtbx
+            // 
+            this.DateBegMtxtbx.Location = new System.Drawing.Point(149, 50);
+            this.DateBegMtxtbx.Mask = "00.00.0000";
+            this.DateBegMtxtbx.Name = "DateBegMtxtbx";
+            this.DateBegMtxtbx.Size = new System.Drawing.Size(100, 20);
+            this.DateBegMtxtbx.TabIndex = 3;
+            this.DateBegMtxtbx.ValidatingType = typeof(System.DateTime);
             // 
             // ReportForm
             // 
@@ -160,12 +160,12 @@ namespace SGC_garages
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ReportNametxtbx;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox DateBegMtxtbx;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox DateEndMtxtbx;
         private System.Windows.Forms.Button StartBtn;
-        private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.Button CloseBtn;
+        private System.Windows.Forms.Button ClearBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox DateEndMtxtbx;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.MaskedTextBox DateBegMtxtbx;
     }
 }
