@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="tAccValueDS" targetNamespace="http://tempuri.org/tAccValueDS.xsd" xmlns:mstns="http://tempuri.org/tAccValueDS.xsd" xmlns="http://tempuri.org/tAccValueDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="postgresConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="postgresConnectionString (Settings)" PropertyReference="ApplicationSettings.SGC_garages.Properties.Settings.GlobalReference.Default.postgresConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="t_acc_valueTableAdapter" GeneratorDataComponentClassName="t_acc_valueTableAdapter" Name="t_acc_value" UserDataComponentName="t_acc_valueTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="postgresConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        t_acc.id_acc_value, s_acc.name_account, t_acc.date_on, t_acc.date_off, t_acc.value_fare, s_si.name_si, s_gtype.name_garage_type
+FROM            "public".t_acc_value t_acc, "public".s_garage_types s_gtype, "public".s_account s_acc, "public".s_si
+WHERE        t_acc.id_garage_type = s_gtype.id_garage_type AND t_acc.id_account = s_acc.id_account AND (t_acc.id_si = s_si.id_si)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_acc_value" DataSetColumn="id_acc_value" />
+              <Mapping SourceColumn="date_on" DataSetColumn="date_on" />
+              <Mapping SourceColumn="date_off" DataSetColumn="date_off" />
+              <Mapping SourceColumn="value_fare" DataSetColumn="value_fare" />
+              <Mapping SourceColumn="name_account" DataSetColumn="name_account" />
+              <Mapping SourceColumn="name_si" DataSetColumn="name_si" />
+              <Mapping SourceColumn="name_garage_type" DataSetColumn="name_garage_type" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="tAccValueDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="tAccValueDS" msprop:Generator_UserDSName="tAccValueDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="t_acc_value" msprop:Generator_TableClassName="t_acc_valueDataTable" msprop:Generator_TableVarName="tablet_acc_value" msprop:Generator_RowChangedName="t_acc_valueRowChanged" msprop:Generator_TablePropName="t_acc_value" msprop:Generator_RowDeletingName="t_acc_valueRowDeleting" msprop:Generator_RowChangingName="t_acc_valueRowChanging" msprop:Generator_RowEvHandlerName="t_acc_valueRowChangeEventHandler" msprop:Generator_RowDeletedName="t_acc_valueRowDeleted" msprop:Generator_RowClassName="t_acc_valueRow" msprop:Generator_UserTableName="t_acc_value" msprop:Generator_RowEvArgName="t_acc_valueRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_acc_value" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_acc_value" msprop:Generator_ColumnPropNameInRow="id_acc_value" msprop:Generator_ColumnPropNameInTable="id_acc_valueColumn" msprop:Generator_UserColumnName="id_acc_value" type="xs:int" />
+              <xs:element name="date_on" msprop:Generator_ColumnVarNameInTable="columndate_on" msprop:Generator_ColumnPropNameInRow="date_on" msprop:Generator_ColumnPropNameInTable="date_onColumn" msprop:Generator_UserColumnName="date_on" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="date_off" msprop:Generator_ColumnVarNameInTable="columndate_off" msprop:Generator_ColumnPropNameInRow="date_off" msprop:Generator_ColumnPropNameInTable="date_offColumn" msprop:Generator_UserColumnName="date_off" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="value_fare" msprop:Generator_ColumnVarNameInTable="columnvalue_fare" msprop:Generator_ColumnPropNameInRow="value_fare" msprop:Generator_ColumnPropNameInTable="value_fareColumn" msprop:Generator_UserColumnName="value_fare" type="xs:float" minOccurs="0" />
+              <xs:element name="name_account" msprop:Generator_ColumnVarNameInTable="columnname_account" msprop:Generator_ColumnPropNameInRow="name_account" msprop:Generator_ColumnPropNameInTable="name_accountColumn" msprop:Generator_UserColumnName="name_account" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4095" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="name_si" msprop:Generator_ColumnVarNameInTable="columnname_si" msprop:Generator_ColumnPropNameInRow="name_si" msprop:Generator_ColumnPropNameInTable="name_siColumn" msprop:Generator_UserColumnName="name_si" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4095" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="name_garage_type" msprop:Generator_ColumnVarNameInTable="columnname_garage_type" msprop:Generator_ColumnPropNameInRow="name_garage_type" msprop:Generator_ColumnPropNameInTable="name_garage_typeColumn" msprop:Generator_UserColumnName="name_garage_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4095" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:t_acc_value" />
+      <xs:field xpath="mstns:id_acc_value" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

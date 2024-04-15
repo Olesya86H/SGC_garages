@@ -1,0 +1,1 @@
+copy public.t_payments (id_account, meter_data, pay_sum, num, fio) FROM 'D:/18_acc.CSV' DELIMITER ';'

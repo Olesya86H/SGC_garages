@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="s_UsersDS" targetNamespace="http://tempuri.org/s_UsersDS.xsd" xmlns:mstns="http://tempuri.org/s_UsersDS.xsd" xmlns="http://tempuri.org/s_UsersDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="postgresConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="postgresConnectionString (Settings)" PropertyReference="ApplicationSettings.SGC_garages.Properties.Settings.GlobalReference.Default.postgresConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="s_personsTableAdapter" GeneratorDataComponentClassName="s_personsTableAdapter" Name="s_persons" UserDataComponentName="s_personsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="postgresConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT "id_person", "fio", "note", "phone_number", "address", "is_user", "is_owner", "is_payer" FROM "public"."s_persons" where is_user = 1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_person" DataSetColumn="id_person" />
+              <Mapping SourceColumn="fio" DataSetColumn="fio" />
+              <Mapping SourceColumn="note" DataSetColumn="note" />
+              <Mapping SourceColumn="phone_number" DataSetColumn="phone_number" />
+              <Mapping SourceColumn="address" DataSetColumn="address" />
+              <Mapping SourceColumn="is_user" DataSetColumn="is_user" />
+              <Mapping SourceColumn="is_owner" DataSetColumn="is_owner" />
+              <Mapping SourceColumn="is_payer" DataSetColumn="is_payer" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="s_UsersDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="s_UsersDS" msprop:Generator_UserDSName="s_UsersDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="s_persons" msprop:Generator_TableClassName="s_personsDataTable" msprop:Generator_TableVarName="tables_persons" msprop:Generator_RowChangedName="s_personsRowChanged" msprop:Generator_TablePropName="s_persons" msprop:Generator_RowDeletingName="s_personsRowDeleting" msprop:Generator_RowChangingName="s_personsRowChanging" msprop:Generator_RowEvHandlerName="s_personsRowChangeEventHandler" msprop:Generator_RowDeletedName="s_personsRowDeleted" msprop:Generator_RowClassName="s_personsRow" msprop:Generator_UserTableName="s_persons" msprop:Generator_RowEvArgName="s_personsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_person" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_person" msprop:Generator_ColumnPropNameInRow="id_person" msprop:Generator_ColumnPropNameInTable="id_personColumn" msprop:Generator_UserColumnName="id_person" type="xs:int" />
+              <xs:element name="fio" msprop:Generator_ColumnVarNameInTable="columnfio" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_UserColumnName="fio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4095" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="note" msprop:Generator_ColumnVarNameInTable="columnnote" msprop:Generator_ColumnPropNameInRow="note" msprop:Generator_ColumnPropNameInTable="noteColumn" msprop:Generator_UserColumnName="note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4095" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="phone_number" msprop:Generator_ColumnVarNameInTable="columnphone_number" msprop:Generator_ColumnPropNameInRow="phone_number" msprop:Generator_ColumnPropNameInTable="phone_numberColumn" msprop:Generator_UserColumnName="phone_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4095" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="address" msprop:Generator_ColumnVarNameInTable="columnaddress" msprop:Generator_ColumnPropNameInRow="address" msprop:Generator_ColumnPropNameInTable="addressColumn" msprop:Generator_UserColumnName="address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4095" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="is_user" msprop:Generator_ColumnVarNameInTable="columnis_user" msprop:Generator_ColumnPropNameInRow="is_user" msprop:Generator_ColumnPropNameInTable="is_userColumn" msprop:Generator_UserColumnName="is_user" type="xs:int" minOccurs="0" />
+              <xs:element name="is_owner" msprop:Generator_ColumnVarNameInTable="columnis_owner" msprop:Generator_ColumnPropNameInRow="is_owner" msprop:Generator_ColumnPropNameInTable="is_ownerColumn" msprop:Generator_UserColumnName="is_owner" type="xs:int" minOccurs="0" />
+              <xs:element name="is_payer" msprop:Generator_ColumnVarNameInTable="columnis_payer" msprop:Generator_ColumnPropNameInRow="is_payer" msprop:Generator_ColumnPropNameInTable="is_payerColumn" msprop:Generator_UserColumnName="is_payer" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:s_persons" />
+      <xs:field xpath="mstns:id_person" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

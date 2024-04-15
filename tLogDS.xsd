@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="tLogDS" targetNamespace="http://tempuri.org/tLogDS.xsd" xmlns:mstns="http://tempuri.org/tLogDS.xsd" xmlns="http://tempuri.org/tLogDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="postgresConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="postgresConnectionString (Settings)" PropertyReference="ApplicationSettings.SGC_garages.Properties.Settings.GlobalReference.Default.postgresConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="t_logTableAdapter" GeneratorDataComponentClassName="t_logTableAdapter" Name="t_log" UserDataComponentName="t_logTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="postgresConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT sp.fio, su.login, l.date_act, l.action, l.note, l.id_log, l.id_user, sp.id_person FROM t_log l, s_users su, s_persons sp where sp.id_person = su.id_person and su.id_user = l.id_user order by date_act desc</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_log" DataSetColumn="id_log" />
+              <Mapping SourceColumn="id_user" DataSetColumn="id_user" />
+              <Mapping SourceColumn="date_act" DataSetColumn="date_act" />
+              <Mapping SourceColumn="action" DataSetColumn="action" />
+              <Mapping SourceColumn="note" DataSetColumn="note" />
+              <Mapping SourceColumn="fio" DataSetColumn="fio" />
+              <Mapping SourceColumn="login" DataSetColumn="login" />
+              <Mapping SourceColumn="id_person" DataSetColumn="id_person" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="tLogDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="tLogDS" msprop:Generator_UserDSName="tLogDS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="t_log" msprop:Generator_TableClassName="t_logDataTable" msprop:Generator_TableVarName="tablet_log" msprop:Generator_RowChangedName="t_logRowChanged" msprop:Generator_TablePropName="t_log" msprop:Generator_RowDeletingName="t_logRowDeleting" msprop:Generator_RowChangingName="t_logRowChanging" msprop:Generator_RowEvHandlerName="t_logRowChangeEventHandler" msprop:Generator_RowDeletedName="t_logRowDeleted" msprop:Generator_RowClassName="t_logRow" msprop:Generator_UserTableName="t_log" msprop:Generator_RowEvArgName="t_logRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_log" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_log" msprop:Generator_ColumnPropNameInRow="id_log" msprop:Generator_ColumnPropNameInTable="id_logColumn" msprop:Generator_UserColumnName="id_log" type="xs:int" />
+              <xs:element name="id_user" msprop:Generator_ColumnVarNameInTable="columnid_user" msprop:Generator_ColumnPropNameInRow="id_user" msprop:Generator_ColumnPropNameInTable="id_userColumn" msprop:Generator_UserColumnName="id_user" type="xs:int" minOccurs="0" />
+              <xs:element name="date_act" msprop:Generator_ColumnVarNameInTable="columndate_act" msprop:Generator_ColumnPropNameInRow="date_act" msprop:Generator_ColumnPropNameInTable="date_actColumn" msprop:Generator_UserColumnName="date_act" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="action" msprop:Generator_ColumnVarNameInTable="columnaction" msprop:Generator_ColumnPropNameInRow="action" msprop:Generator_ColumnPropNameInTable="actionColumn" msprop:Generator_UserColumnName="action" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4095" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="note" msprop:Generator_ColumnVarNameInTable="columnnote" msprop:Generator_ColumnPropNameInRow="note" msprop:Generator_ColumnPropNameInTable="noteColumn" msprop:Generator_UserColumnName="note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4095" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fio" msprop:Generator_ColumnVarNameInTable="columnfio" msprop:Generator_ColumnPropNameInRow="fio" msprop:Generator_ColumnPropNameInTable="fioColumn" msprop:Generator_UserColumnName="fio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4095" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="login" msprop:Generator_ColumnVarNameInTable="columnlogin" msprop:Generator_ColumnPropNameInRow="login" msprop:Generator_ColumnPropNameInTable="loginColumn" msprop:Generator_UserColumnName="login" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4095" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_person" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_person" msprop:Generator_ColumnPropNameInRow="id_person" msprop:Generator_ColumnPropNameInTable="id_personColumn" msprop:Generator_UserColumnName="id_person" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:t_log" />
+      <xs:field xpath="mstns:id_log" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

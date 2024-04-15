@@ -1,0 +1,1268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4EB2A0E-7133-4FBC-BEBE-74B13DD3C50E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SGC_garages</RootNamespace>
+    <AssemblyName>SGC_garages</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Npgsql, Version=4.0.4.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>packages\Npgsql.4.0.4\lib\net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.1\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutProgramm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutProgramm.Designer.cs">
+      <DependentUpon>AboutProgramm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccClass.cs" />
+    <Compile Include="AccFareClass.cs" />
+    <Compile Include="AccFareValueShClass.cs" />
+    <Compile Include="AccntDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccntDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccTypeForm.Designer.cs">
+      <DependentUpon>AccTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccType_DS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccType_DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AccValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccValueForm.Designer.cs">
+      <DependentUpon>AccValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAccForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAccForm.Designer.cs">
+      <DependentUpon>AddAccForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDictItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDictItemForm.Designer.cs">
+      <DependentUpon>AddDictItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddFareValueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFareValueForm.Designer.cs">
+      <DependentUpon>AddFareValueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPersonForm.Designer.cs">
+      <DependentUpon>AddPersonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReesForm.Designer.cs">
+      <DependentUpon>ReesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class_Conn.cs" />
+    <Compile Include="DictItemClass.cs" />
+    <Compile Include="FindGarageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindGarageForm.Designer.cs">
+      <DependentUpon>FindGarageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenFind.Designer.cs">
+      <DependentUpon>FormGenFind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GarageClass.cs" />
+    <Compile Include="GarageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GarageForm.Designer.cs">
+      <DependentUpon>GarageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewGarageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewGarageForm.Designer.cs">
+      <DependentUpon>NewGarageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPaymentForm.Designer.cs">
+      <DependentUpon>NewPaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentClass.cs" />
+    <Compile Include="PersonClass.cs" />
+    <Compile Include="postgresDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>postgresDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sAcc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sAcc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sAccDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sAccDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SAccTypeDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAccTypeDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sAccTypeReeDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sAccTypeReeDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sAcc_NewPay1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sAcc_NewPay1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GarageTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GarageTypeForm.Designer.cs">
+      <DependentUpon>GarageTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralPersonsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralPersonsListForm.Designer.cs">
+      <DependentUpon>GeneralPersonsListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OwnersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OwnersForm.Designer.cs">
+      <DependentUpon>OwnersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayersForm.Designer.cs">
+      <DependentUpon>PayersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendMessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendMessForm.Designer.cs">
+      <DependentUpon>SendMessForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sGarType.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sGarType.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SGarTypeDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SGarTypeDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sGarTypeDS1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sGarTypeDS1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sGarTypeReeDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sGarTypeReeDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiForm.Designer.cs">
+      <DependentUpon>SiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sPerDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sPerDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sPerP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sPerP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sPersonsDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sPersonsDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sPer_NewGarDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sPer_NewGarDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sSi_DS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sSi_DS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="s_GarageTypesDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s_GarageTypesDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="s_OwnersDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s_OwnersDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="S_payersDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>S_payersDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="s_personsDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s_personsDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="s_SiDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s_SiDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="s_UsersDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s_UsersDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="s_UsersLKDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>s_UsersLKDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tAccValueDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tAccValueDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tGarDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tGarDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tLogDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tLogDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="tLogUserDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tLogUserDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserCab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserCab.Designer.cs">
+      <DependentUpon>UserCab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserClass.cs" />
+    <Compile Include="UsersListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersListForm.Designer.cs">
+      <DependentUpon>UsersListForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutProgramm.resx">
+      <DependentUpon>AboutProgramm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccTypeForm.resx">
+      <DependentUpon>AccTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccValueForm.resx">
+      <DependentUpon>AccValueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAccForm.resx">
+      <DependentUpon>AddAccForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDictItemForm.resx">
+      <DependentUpon>AddDictItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddFareValueForm.resx">
+      <DependentUpon>AddFareValueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPersonForm.resx">
+      <DependentUpon>AddPersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReesForm.resx">
+      <DependentUpon>ReesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindGarageForm.resx">
+      <DependentUpon>FindGarageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenFind.resx">
+      <DependentUpon>FormGenFind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GarageForm.resx">
+      <DependentUpon>GarageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewGarageForm.resx">
+      <DependentUpon>NewGarageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewPaymentForm.resx">
+      <DependentUpon>NewPaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GarageTypeForm.resx">
+      <DependentUpon>GarageTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralPersonsListForm.resx">
+      <DependentUpon>GeneralPersonsListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OwnersForm.resx">
+      <DependentUpon>OwnersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayersForm.resx">
+      <DependentUpon>PayersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SendMessForm.resx">
+      <DependentUpon>SendMessForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SiForm.resx">
+      <DependentUpon>SiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCab.resx">
+      <DependentUpon>UserCab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersListForm.resx">
+      <DependentUpon>UsersListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AccntDS.xsc">
+      <DependentUpon>AccntDS.xsd</DependentUpon>
+    </None>
+    <None Include="AccntDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccntDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AccntDS.xss">
+      <DependentUpon>AccntDS.xsd</DependentUpon>
+    </None>
+    <None Include="AccType_DS.xsc">
+      <DependentUpon>AccType_DS.xsd</DependentUpon>
+    </None>
+    <None Include="AccType_DS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccType_DS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AccType_DS.xss">
+      <DependentUpon>AccType_DS.xsd</DependentUpon>
+    </None>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="postgresDataSet.xsc">
+      <DependentUpon>postgresDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="postgresDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>postgresDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="postgresDataSet.xss">
+      <DependentUpon>postgresDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="sAcc.xsc">
+      <DependentUpon>sAcc.xsd</DependentUpon>
+    </None>
+    <None Include="sAcc.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sAcc.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sAcc.xss">
+      <DependentUpon>sAcc.xsd</DependentUpon>
+    </None>
+    <None Include="sAccDS.xsc">
+      <DependentUpon>sAccDS.xsd</DependentUpon>
+    </None>
+    <None Include="sAccDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sAccDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sAccDS.xss">
+      <DependentUpon>sAccDS.xsd</DependentUpon>
+    </None>
+    <None Include="SAccTypeDS.xsc">
+      <DependentUpon>SAccTypeDS.xsd</DependentUpon>
+    </None>
+    <None Include="SAccTypeDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAccTypeDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAccTypeDS.xss">
+      <DependentUpon>SAccTypeDS.xsd</DependentUpon>
+    </None>
+    <None Include="sAccTypeReeDS.xsc">
+      <DependentUpon>sAccTypeReeDS.xsd</DependentUpon>
+    </None>
+    <None Include="sAccTypeReeDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sAccTypeReeDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sAccTypeReeDS.xss">
+      <DependentUpon>sAccTypeReeDS.xsd</DependentUpon>
+    </None>
+    <None Include="sAcc_NewPay1.xsc">
+      <DependentUpon>sAcc_NewPay1.xsd</DependentUpon>
+    </None>
+    <None Include="sAcc_NewPay1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sAcc_NewPay1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sAcc_NewPay1.xss">
+      <DependentUpon>sAcc_NewPay1.xsd</DependentUpon>
+    </None>
+    <None Include="sGarType.xsc">
+      <DependentUpon>sGarType.xsd</DependentUpon>
+    </None>
+    <None Include="sGarType.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sGarType.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sGarType.xss">
+      <DependentUpon>sGarType.xsd</DependentUpon>
+    </None>
+    <None Include="SGarTypeDS.xsc">
+      <DependentUpon>SGarTypeDS.xsd</DependentUpon>
+    </None>
+    <None Include="SGarTypeDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SGarTypeDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SGarTypeDS.xss">
+      <DependentUpon>SGarTypeDS.xsd</DependentUpon>
+    </None>
+    <None Include="sGarTypeDS1.xsc">
+      <DependentUpon>sGarTypeDS1.xsd</DependentUpon>
+    </None>
+    <None Include="sGarTypeDS1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sGarTypeDS1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sGarTypeDS1.xss">
+      <DependentUpon>sGarTypeDS1.xsd</DependentUpon>
+    </None>
+    <None Include="sGarTypeReeDS.xsc">
+      <DependentUpon>sGarTypeReeDS.xsd</DependentUpon>
+    </None>
+    <None Include="sGarTypeReeDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sGarTypeReeDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sGarTypeReeDS.xss">
+      <DependentUpon>sGarTypeReeDS.xsd</DependentUpon>
+    </None>
+    <None Include="sPerDS.xsc">
+      <DependentUpon>sPerDS.xsd</DependentUpon>
+    </None>
+    <None Include="sPerDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sPerDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sPerDS.xss">
+      <DependentUpon>sPerDS.xsd</DependentUpon>
+    </None>
+    <None Include="sPerP.xsc">
+      <DependentUpon>sPerP.xsd</DependentUpon>
+    </None>
+    <None Include="sPerP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sPerP.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sPerP.xss">
+      <DependentUpon>sPerP.xsd</DependentUpon>
+    </None>
+    <None Include="sPersonsDS.xsc">
+      <DependentUpon>sPersonsDS.xsd</DependentUpon>
+    </None>
+    <None Include="sPersonsDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sPersonsDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sPersonsDS.xss">
+      <DependentUpon>sPersonsDS.xsd</DependentUpon>
+    </None>
+    <None Include="sPer_NewGarDS.xsc">
+      <DependentUpon>sPer_NewGarDS.xsd</DependentUpon>
+    </None>
+    <None Include="sPer_NewGarDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sPer_NewGarDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sPer_NewGarDS.xss">
+      <DependentUpon>sPer_NewGarDS.xsd</DependentUpon>
+    </None>
+    <None Include="sSi_DS.xsc">
+      <DependentUpon>sSi_DS.xsd</DependentUpon>
+    </None>
+    <None Include="sSi_DS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sSi_DS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sSi_DS.xss">
+      <DependentUpon>sSi_DS.xsd</DependentUpon>
+    </None>
+    <None Include="s_GarageTypesDS.xsc">
+      <DependentUpon>s_GarageTypesDS.xsd</DependentUpon>
+    </None>
+    <None Include="s_GarageTypesDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>s_GarageTypesDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="s_GarageTypesDS.xss">
+      <DependentUpon>s_GarageTypesDS.xsd</DependentUpon>
+    </None>
+    <None Include="s_OwnersDS.xsc">
+      <DependentUpon>s_OwnersDS.xsd</DependentUpon>
+    </None>
+    <None Include="s_OwnersDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>s_OwnersDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="s_OwnersDS.xss">
+      <DependentUpon>s_OwnersDS.xsd</DependentUpon>
+    </None>
+    <None Include="S_payersDS.xsc">
+      <DependentUpon>S_payersDS.xsd</DependentUpon>
+    </None>
+    <None Include="S_payersDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>S_payersDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="S_payersDS.xss">
+      <DependentUpon>S_payersDS.xsd</DependentUpon>
+    </None>
+    <None Include="s_personsDS.xsc">
+      <DependentUpon>s_personsDS.xsd</DependentUpon>
+    </None>
+    <None Include="s_personsDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>s_personsDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="s_personsDS.xss">
+      <DependentUpon>s_personsDS.xsd</DependentUpon>
+    </None>
+    <None Include="s_SiDS.xsc">
+      <DependentUpon>s_SiDS.xsd</DependentUpon>
+    </None>
+    <None Include="s_SiDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>s_SiDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="s_SiDS.xss">
+      <DependentUpon>s_SiDS.xsd</DependentUpon>
+    </None>
+    <None Include="s_UsersDS.xsc">
+      <DependentUpon>s_UsersDS.xsd</DependentUpon>
+    </None>
+    <None Include="s_UsersDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>s_UsersDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="s_UsersDS.xss">
+      <DependentUpon>s_UsersDS.xsd</DependentUpon>
+    </None>
+    <None Include="s_UsersLKDS.xsc">
+      <DependentUpon>s_UsersLKDS.xsd</DependentUpon>
+    </None>
+    <None Include="s_UsersLKDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>s_UsersLKDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="s_UsersLKDS.xss">
+      <DependentUpon>s_UsersLKDS.xsd</DependentUpon>
+    </None>
+    <None Include="tAccValueDS.xsc">
+      <DependentUpon>tAccValueDS.xsd</DependentUpon>
+    </None>
+    <None Include="tAccValueDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tAccValueDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tAccValueDS.xss">
+      <DependentUpon>tAccValueDS.xsd</DependentUpon>
+    </None>
+    <None Include="tGarDS.xsc">
+      <DependentUpon>tGarDS.xsd</DependentUpon>
+    </None>
+    <None Include="tGarDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tGarDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tGarDS.xss">
+      <DependentUpon>tGarDS.xsd</DependentUpon>
+    </None>
+    <None Include="tLogDS.xsc">
+      <DependentUpon>tLogDS.xsd</DependentUpon>
+    </None>
+    <None Include="tLogDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tLogDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tLogDS.xss">
+      <DependentUpon>tLogDS.xsd</DependentUpon>
+    </None>
+    <None Include="tLogUserDS.xsc">
+      <DependentUpon>tLogUserDS.xsd</DependentUpon>
+    </None>
+    <None Include="tLogUserDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tLogUserDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tLogUserDS.xss">
+      <DependentUpon>tLogUserDS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\add user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\attention.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\back 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\balloon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\book 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\case.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\close file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\database  add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\database delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\database-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\delete 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\delete database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\display.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\envelope pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\envelope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\envelope-check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\favorites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\flag green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\flag red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\flag yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\globe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\increase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\magnifier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\marked list points.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\megaphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\mouse cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\open envelope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\recycle bin sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\recycle bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\reduce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\remove user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\save as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\stop 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\add user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\alarm.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\attention.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\back 1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\back.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\balloon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\book 1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\book bookmark 1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\book bookmark.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\book.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\bulb.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\calculator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\calendar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\cancel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\case.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\clock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\close file.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\cut.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\database  add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\database delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\database.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\database-check.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\delete 1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\delete database.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\down.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\envelope cross.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\envelope in.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\envelope out.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\envelope pencil.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\envelope.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\envelope-check.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\exit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\favorites.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\find.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\flag green.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\flag red.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\flag yellow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\forward.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\globe.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\history.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\home.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\import.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\increase.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\left.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\lock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\megaphone.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\minus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\mouse cursor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\new.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\open envelope.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\open network file.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\open.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\options.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\page settings.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\paper clip.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\picture.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\plus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\preview.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\printer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\property.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\recycle bin sign.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\reduce.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\remove user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\right.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\save as.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\save.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\stop.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\update.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\garage_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\Invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\pack_money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\Cash-register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\jpg\about_grg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\envelope out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\reportexcel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\ico\16x16\reportexcel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\16x16\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\48x48\money_dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\48x48\garage_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\48x48\spreadsheet_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pictures\png\48x48\find_48.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
